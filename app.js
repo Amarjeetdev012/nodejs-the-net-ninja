@@ -1,26 +1,29 @@
 var fs = require("fs");
 
-// sync opertaions
-// var sample = fs.readFileSync("sample.txt","utf8")
+// delete file
+// fs.unlink("writeme.txt", (err => {
+//     if (err) console.log(err);
+//     else {
+//       console.log(`file Deleted succesfully`)}
+//     }
+//     )
+//     )
 
-// console.log(sample)
+// make directory sync
+// fs.mkdirSync("filesystem")
 
-// first give the file name and second give the value of the file o content of the file
-// fs.writeFileSync("writeFile.txt", sample)
+// delete directory sync
+// fs.rmdirSync("filesystem")
 
-// async operations
-// readfile
-// fs.readFile("sample.txt", "utf8", function(err, data) {
-//     console.log(data)
+// make directory async
+
+// fs.mkdir("stuff", function(){
+//     fs.readFile("sample.txt", "utf8", function(err, data){
+//         fs.writeFileSync("./stuff/writeme.txt", data)
+//     })
 // })
 
-//  writefile data
-let readfile = fs.readFileSync("sample.txt", "utf8");
+// delete directory
 
-fs.writeFile("writeme.txt" , readfile, (err) => {
-    if (err)
-      console.log(err);
-    else {
-      console.log("File written successfully\n");
-    }
-})
+// fs.unlink("./stuff/writeme.txt")
+fs.rmdirSync("stuff");
