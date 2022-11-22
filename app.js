@@ -1,29 +1,10 @@
-var fs = require("fs");
+var http = require("http")
 
-// delete file
-// fs.unlink("writeme.txt", (err => {
-//     if (err) console.log(err);
-//     else {
-//       console.log(`file Deleted succesfully`)}
-//     }
-//     )
-//     )
+var server = http.createServer(function(req,res) {
+console.log("request was made : " +  req.url)
+res.writeHead(200, {"Content-Type":"text/plain"})
+res.end("hey buddy your are on right path")
+})
 
-// make directory sync
-// fs.mkdirSync("filesystem")
-
-// delete directory sync
-// fs.rmdirSync("filesystem")
-
-// make directory async
-
-// fs.mkdir("stuff", function(){
-//     fs.readFile("sample.txt", "utf8", function(err, data){
-//         fs.writeFileSync("./stuff/writeme.txt", data)
-//     })
-// })
-
-// delete directory
-
-// fs.unlink("./stuff/writeme.txt")
-fs.rmdirSync("stuff");
+server.listen(3000, "127.0.0.1")
+console.log("hey folks, now listening to port no 3000")
