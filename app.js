@@ -1,10 +1,9 @@
-var http = require("http")
+var fs = require("fs")
 
-var server = http.createServer(function(req,res) {
-console.log("request was made : " +  req.url)
-res.writeHead(200, {"Content-Type":"text/plain"})
-res.end("hey buddy your are on right path")
+var myReadStream = fs.createReadStream(__dirname + "/readMe.txt", "utf8")
+
+myReadStream.on("data", function(chunk){
+    console.log("new chunk received")
+    console.log(chunk)
 })
 
-server.listen(3000, "127.0.0.1")
-console.log("hey folks, now listening to port no 3000")
