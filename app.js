@@ -1,33 +1,26 @@
-var events = require("events")
+var fs = require("fs");
 
-// var myEmitter = new events.EventEmitter()
+// sync opertaions
+// var sample = fs.readFileSync("sample.txt","utf8")
 
-// myEmitter.on("someEvent", function(msg){
-//     console.log(msg)
+// console.log(sample)
+
+// first give the file name and second give the value of the file o content of the file
+// fs.writeFileSync("writeFile.txt", sample)
+
+// async operations
+// readfile
+// fs.readFile("sample.txt", "utf8", function(err, data) {
+//     console.log(data)
 // })
 
-// myEmitter.emit("someEvent", "the event is emitted")
+//  writefile data
+let readfile = fs.readFileSync("sample.txt", "utf8");
 
-var util = require("util")
-
-var Person = function (name) {
-    this.name = name
-}
-// inherits like class or type of saancha or eske use se copyies bna sakte hai
-util.inherits(Person, events.EventEmitter)
-
-var james = new Person("james")
-var mary = new Person("mary")
-var ryu = new Person("ryu")
-
-var people = [james,mary,ryu]
-
-people.forEach(function(person){
-    person.on("speak", function (msg) {
-        console.log(person.name + " said "+ msg)
-    })
+fs.writeFile("writeme.txt" , readfile, (err) => {
+    if (err)
+      console.log(err);
+    else {
+      console.log("File written successfully\n");
+    }
 })
-
-james.emit("speak" ," hey dudes")
-ryu.emit("speak" ," i want a curry")
-mary.emit("speak" ," i want a fresh mushrooms")
