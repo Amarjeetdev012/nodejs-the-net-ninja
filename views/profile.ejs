@@ -5,24 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background: skyblue;
-            font-family: verdana;
-            color: #fff;
-            padding: 30px;
-        }
-        h1 {
-            font-size: 48px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <h1> you are viewing the profile of <%= person %> </h1>
-    <p><strong>name</strong> <%= data.name %></p>
-    <p><strong>age</strong> <%= data.age %></p>
+    <h2> Welcome to profile section of <%= person %></h2>
+    <p><strong>name:</strong> <%= data.name %></p>
+    <p><strong>job:</strong> <%= data.job %></p>
+    <h2>hobbies</h2>
+    <ol>
+        <% data.hobbies.forEach(function(item){ %>
+ <li> <%= item %></li>
+      <%  }); %>
+    </ol>
 </body>
 </html>
