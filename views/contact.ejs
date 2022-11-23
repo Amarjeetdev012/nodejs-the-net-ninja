@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-    background: #0d1521;
-    background-color: #1c2531;
-    font-family: tahoma;
-    color: #989898;
-    text-align: center;
-}
+        body {
+            background: #0d1521;
+            background-color: #1c2531;
+            font-family: tahoma;
+            color: #989898;
+            text-align: center;
+        }
+
         p {
             text-align: center;
         }
+
         .form {
             text-align: center;
             text-decoration-color: #1c2531;
         }
     </style>
 </head>
+
 <body>
     <%- include('partials/nav') %>
-    <h1> Welcome to the contact page </h1>
-    <p>contact us !</p>
-   
-    <form id="contact form">
-        <label for="name"> Enter Your Name</label><br>
-        <input type="text" name="name" id="name" value="<%= qs.name %>">
-        <br>
-        <label for="emailid"> Enter Your EmailId</label><br>
-        <input type="email" name="emailid" id="emailid" value="<%= qs.emailid %>">
-        <br>
-        <label for="phone"> Enter Your contact number</label><br>
-        <input type="number" name="phone" id="phone" value="<%= qs.phone %>"><br>
-        <textarea rows="4" cols="50" name="comment" form="usrform">
-            Enter about yourself here...</textarea><br>
-        <label for="submit"></label>
-        <input type="submit" value="submit" />
-    </form>
-    
+        <h1> Welcome to the contact page </h1>
+        <p>contact us !</p>
+
+        <form id="contact-form" method="POST" action="/contact" enctype="application/x-www-form-urlencoded">
+            <label for="name"> Enter Your Name</label>
+            <input type="text" name="name" id="name" value="<%= qs.name %>">
+            <label for="emailid"> Enter Your EmailId</label>
+            <input type="text" name="emailid" id="emailid" value="<%= qs.emailid %>">
+            <label for="phone"> Enter Your contact number</label>
+            <input type="text" name="phone" id="phone" value="<%= qs.phone %>">
+            <label for="submit"></label>
+            <input type="submit" value="submit">
+        </form>
+
 </body>
+
 </html>

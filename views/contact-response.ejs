@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background: #121a28;
+    background-color: #033578;
+    font-family: tahoma;
+    color: #8d9e46;
+    text-align: center;
+}
+        p {
+            text-align: center;
+        }
+        .form {
+            text-align: center;
+            text-decoration-color: #1c2531;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <h1> Welcome <%= data.name %> we are now connected to do awesome work </h1>
+    <p>contact us !</p>
+    <p>Thanks for getting in touch</p>
+    <p>you contacted <%= data.name %></p>
+    <p>we will reply to you at <%= data.emailid %></p>
+    
+</body>
+</html>
