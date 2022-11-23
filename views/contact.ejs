@@ -8,7 +8,7 @@
     <style>
         body{
     background: #0d1521;
-    background-color: #23282e;
+    background-color: #1c2531;
     font-family: tahoma;
     color: #989898;
     text-align: center;
@@ -16,11 +16,31 @@
         p {
             text-align: center;
         }
+        .form {
+            text-align: center;
+            text-decoration-color: #1c2531;
+        }
     </style>
 </head>
 <body>
     <%- include('partials/nav') %>
     <h1> Welcome to the contact page </h1>
     <p>contact us !</p>
+   
+    <form id="contact form">
+        <label for="name"> Enter Your Name</label><br>
+        <input type="text" name="name" id="name" value="<%= qs.name %>">
+        <br>
+        <label for="emailid"> Enter Your EmailId</label><br>
+        <input type="email" name="emailid" id="emailid" value="<%= qs.emailid %>">
+        <br>
+        <label for="phone"> Enter Your contact number</label><br>
+        <input type="number" name="phone" id="phone" value="<%= qs.phone %>"><br>
+        <textarea rows="4" cols="50" name="comment" form="usrform">
+            Enter about yourself here...</textarea><br>
+        <label for="submit"></label>
+        <input type="submit" value="submit" />
+    </form>
+    
 </body>
 </html>
