@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
-const path = require("path")
 
-// app.set('views', path.join(__dirname, 'views'))
+// for using ejs file we have to set view engine ejs using app.set
 app.set("view engine", "ejs");
+
+// using app.use to serve up static CSS files in public/assets/ folder when /public link is called in ejs files
+// app.use("/route", express.static("foldername"));
+app.use('/stuff', express.static('stuff'));
+
 
 app.get("/", function (req, res) {
   res.render("index");
